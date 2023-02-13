@@ -1,0 +1,29 @@
+openapi: 3.0.3
+info:
+  title: Галерея
+  version: 1.0.11
+  description: Позволяет просматривать галерею и добавлять посты в избранное 
+tags:
+  - name: auth
+    description: Авторизация пользователя
+paths:
+  /auth:
+    post:
+      tags:
+        - auth
+      requestBody:
+        description: Авторизует пользователя
+        content:
+          application/json:
+            schema:
+              $ref: '#models/components/schemas/Auth'
+        required: true
+      responses:
+        '200':
+          description: Операция прошла успешно
+          content:
+            application/json:
+              schema:
+                $ref: '#/models/components/schemas/User'          
+        '400':
+          description: Неправильно введен логин или пароль
