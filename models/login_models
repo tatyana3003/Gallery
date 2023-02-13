@@ -1,0 +1,55 @@
+components:
+  schemas:
+    Auth:
+      required:
+        - login
+        - password
+      type: object
+      properties:
+        login:
+          type: string
+          example: +7(9XX) XXX XX XX
+        password:
+          type: string
+          example: GH567fjbvk
+    User:
+      type: object
+      properties:
+        token:
+          type: object
+          items:
+            $ref: '#/components/schemas/Tokens'
+        profile:
+          type: object
+          items:
+            $ref: '#/components/schemas/Visitors'
+    Tokens:
+      type: object
+      properties:
+        refresh_token:
+          type: string
+          example: TDY7t34tgf
+        accsess_token: 
+          type: string
+          example: TDY7t34tgfhvivir
+    Visitors:
+      type: object
+      properties:
+        avatar_url:
+          type: string
+          example: http://shalkov.ru/api?id={}
+        name:
+          type: string
+          example: Александра Новикова
+        description:
+          type: string
+          example: Светлое будущее
+        city:
+          type: string
+          example: Санкт-Петербург
+        phone:
+          type: string
+          example: +7(9XX) XXX XX XX
+        email:
+          type: string
+          example: alex@gmail.com
