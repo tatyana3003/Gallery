@@ -73,3 +73,25 @@ paths:
                 $ref: '#/models/components/schemas/Tokens'
         '403':
           description: Что то пошло не так.Попробуйте позже
+  /search:
+    get:
+      tags:
+        - gallery
+      summary: Предоставляет список постов по поиску пользователя
+      parameters:
+        - name: name
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Операция прошла успешно
+          content:
+            application/json:
+              schema:
+                $ref: '#/models/components/schemas/Gallery'
+        '403':
+          description: Что то пошло не так.Попробуйте снова
+        '401':
+          description: Пользователь не авторизован
