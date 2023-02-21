@@ -95,3 +95,26 @@ paths:
           description: Что то пошло не так.Попробуйте снова
         '401':
           description: Пользователь не авторизован
+  /change_favorite_state:
+    post:
+      tags:
+        - gallery
+      parameters:
+        - name: id
+          in: query
+          description: ID пользователя
+          required: true
+          schema:
+            type: integer
+        - name: state
+          in: query
+          description: Состояние поста
+          schema:
+            type: boolean
+      responses:
+        '200':
+          description: Операция прошла успешно
+        '403':
+          description: Что то пошло не так.Попробуйте снова
+        '401':
+          description: Пользователь не авторизован
