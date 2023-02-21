@@ -27,3 +27,19 @@ paths:
                 $ref: '#/models/components/schemas/User'          
         '400':
           description: Неправильно введен логин или пароль
+  /gallery:
+    get:
+      tags:
+        - gallery
+      summary: ''
+      responses:
+        '200':
+          description: Операция прошла успешно
+          content:
+            application/json:
+              schema:
+                $ref: '#/models/components/schemas/Gallery'
+        '403':
+          description: Что то пошло не так.Попробуйте снова
+        "401":
+          description: Пользователь не авторизован
