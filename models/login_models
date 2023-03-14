@@ -37,7 +37,7 @@ components:
       properties:
         avatar_url:
           type: string
-          example: http://shalkov.ru/api?id={}
+          example: http://simple.ru/api?id={}
         name:
           type: string
           example: Александра Новикова
@@ -68,7 +68,7 @@ components:
           example: Первый день в Surf
         img_url:
           type: string
-          example: http://shalkov.ru/api/...
+          example: http://simple.ru/api/...
         data:
           type: string
           example: 28.01.22
